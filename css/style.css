@@ -921,15 +921,11 @@ footer .social a:hover{
  .fa-ellipsis-h{
     padding: 5px;
     font-size: 1.45rem;
-    color:#93a2dd;;
+    color:#93a2dd;
     border-radius: 5px;
     cursor: pointer;
 }
  .fa-ellipsis-h:hover{
-    background-color: #f0f3ff;
-    color: #5d78ff;
-}
- .test{
     background-color: #f0f3ff;
     color: #5d78ff;
 }
