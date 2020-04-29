@@ -7,13 +7,9 @@ body{
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
+
 label{
     margin-bottom: 0;
-}
-.col-lg-4,
-.col-lg-8{
-    padding-right: 7px;
-    padding-left: 7px;
 }
 .index{
     background-color: #f2f3f8;
@@ -21,23 +17,38 @@ label{
 .show{
     display: block;
 }
-
+ul{
+    margin-bottom: 0;
+}
 .home .kaside{
     background-color: #242939;
-    width: 17%;
     padding-left: 1.5rem;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
 }
+.kasideWidth{
+    width: 16%;
+}
 .home .kaside .header{
     display: flex;
     flex-direction: row;
     padding: 16px 0 30px;
 }
-.home .kaside .header .logo img{
-
+.add1{
+    width: 3%;
+}
+button:focus{
+    outline: none;
+}
+.add1 .logo,
+.add1 .footer,
+.add1 .body{
+    display: none;
+}
+.add2{
+    width: 97%;
 }
 .home .kaside .header .button{
     position: absolute;
@@ -49,6 +60,7 @@ label{
     border: 0;
     font-size: 1.4rem;
     color: #434d6b;
+    cursor: pointer;
 }
 .home .kaside .body {
     overflow-y: scroll;
@@ -145,9 +157,11 @@ label{
 /* ******************** */
 
 .home .kbody{
-    width: 83%;
     position: absolute;
     right: 0;
+}
+.kbodyWidth{
+    width: 84%;
 }
 .kbody .row{
     margin: 0;
@@ -229,7 +243,7 @@ label{
     list-style: none;
 }
 .kbody .navbar nav .leftNav .reports{
-    width: 22.55rem;
+    width: 25.5rem;
 }
 .kbody .navbar nav .leftNav .navDrop .navDrop_Ul li{
     padding: .5rem 2rem;
@@ -250,10 +264,11 @@ label{
     display: flex;
     padding-right: 15px;
 }
-.kbody .navbar nav .rightNav .rightNavUl div{
+.kbody .navbar nav .rightNav .rightNavUl>div{
     padding: 5px 8px;
     margin: auto;
     color: rgba(158, 158, 158, 0.69)    ;
+    cursor: pointer;
 }
 .kbody .navbar nav .rightNav .rightNavUl .search .searchDiv{
     padding: 10px 15px;
@@ -264,6 +279,9 @@ label{
 }
 .kbody .navbar nav .rightNav .rightNavUl .search .searchDiv input{
     border: 0;
+}
+.kbody .navbar nav .rightNav .rightNavUl .search .searchDiv input:focus{
+    outline: 0;
 }
 .kbody .navbar nav .rightNav .rightNavUl .search .searchDiv input::placeholder{
     font-size: .8rem;
@@ -291,7 +309,7 @@ label{
 
 .kbody .contain{
     width: 95%;
-    margin: 5.5rem auto 1rem;
+    margin: 5rem auto .5rem;
 }
 .kbody .contain .dashboard{
     display: flex;
@@ -301,10 +319,12 @@ label{
 }
 .kbody .contain .dashboard .dashboardRight{
     padding-right: 15px;
+    margin: auto 0;
 }
 .kbody .contain .dashboard .dashboardLeft{
     display: flex;
     padding-left: 15px;
+    margin: auto 0;
 }
 .kbody .contain .dashboard .dashboardLeft h3{
     font-weight: 500;
@@ -314,7 +334,7 @@ label{
     line-height: inherit;
 }
 .kbody .contain .dashboard .dashboardLeft a{
-    margin-right: .5rem;
+    margin: auto .3rem;
     color: #959cb6;
     font-size: .7rem;
 }
@@ -397,17 +417,22 @@ label{
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+
 }
 .one .cardBody .number{
     position: relative;
     width: 35%;
+    background-image:linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.77)),url(../img/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .one .cardBody .number h3{
     display: inline;
     text-align: center;
     position: absolute;
-    top: 51px;
-    left: 37px;
+    top: 44%;
+    left: 31%;
     color: #48465b;
     font-size: 1.5rem;
 }
@@ -448,10 +473,6 @@ label{
 }
 .one .cardBody .course{
     justify-content: center;
-}
-
-.contain .rowTwo{
-    margin-top: 1rem;
 }
 .contain .rowTwo .carouselDiv{
     background-color: white;
@@ -553,13 +574,9 @@ label{
     margin: auto 0;
     color: #74788d;
 }
-.contain .rowThree {
-    margin-top: 1rem;
-}
 
 .contain .rowThree .upload{
     background-color: white;
-    height: 35.55rem;
 }
 .contain .rowThree .upload .uploadHead {
     padding: .8rem 1.5rem;
@@ -618,17 +635,18 @@ label{
     position: relative;
     height: 7.5rem;
     margin-top: 4rem;
+    background-image: url(../img/clouds.png);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-.contain .rowThree .upload .uploadBody .clouds img{
-    width: 100%;
-    height: 100%;
-}
+
 .contain .rowThree .upload .uploadBody .clouds .cloudsUpload{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 25%;
-    left: 31%;
+    bottom: 14px;
+    left: 33%;
 }
 .contain .rowThree .upload .uploadBody .clouds .cloudsUpload .upicon{
     margin-left: 27%;
@@ -644,23 +662,46 @@ label{
     background-color: white;
     padding: 1rem 1.5rem;
     height: 35.55rem;
-    overflow-y: scroll;
 }
-.rowThree .recent .recentHead{
+.rowThree .recent .recentHead ,
+.rowThree .recent .recentfooter{
     display: flex;
     justify-content: space-between;
     background-color: white;
     position: absolute;
-    top: 0;
-    width: 89%;
-    padding: 1rem 0;
+    width: 91%;
+
     z-index: 5;
 }
+.rowThree .recent .recentHead{
+    top: 8px;
+    padding: 1rem 0;
+}
+.rowThree .recent .recentfooter{
+    bottom: 8px;
+    padding: .5rem 0;
+}
+.recentfooter .pagination{
+    margin: auto;
+}
+.recentfooter .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+.recentfooter .pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+.recentfooter .pagination a:hover:not(.active) {background-color: #ddd;}
+
 .rowThree .recent .recentHead div{
     display: flex;
 }
 .rowThree .recent .recentHead div span{
-    font-size: .6rem;
+    font-size: .75rem;
     margin: auto .6rem;
     color: #74788d;
 }
@@ -689,6 +730,8 @@ label{
 
 .rowThree .recent .recentTable{
     margin-top: 4rem;
+    height: 80%;
+    overflow-y: scroll;
 }
 .rowThree .recent .recentTable table{
     direction: rtl;
@@ -719,14 +762,16 @@ label{
 .coulmn4 div{
     display: flex;
 }
-.pending{
+.pending,
+.success{
     background-color: rgba(93, 120, 255, 0.1);
     color: #5d78ff;
     font-weight: 600;
     padding: 5px 10px;
     border-radius: 3px;
 }
-.processing{
+.processing,
+.danger{
     background-color: rgba(253, 57, 122, 0.1);
     color: #fd397a;
     font-weight: 600;
@@ -784,7 +829,6 @@ label{
 .rowfour .product{
     background-color: white;
     margin-top: 1rem;
-    height: 31rem;
 }
 .rowfour .product .productHeader{
     padding: .8rem 1.5rem;
@@ -825,6 +869,9 @@ label{
 .rowfour .product .productBody .selection .selectionUl .selectionLi a .icon{
     margin: auto;
     margin-bottom: 5px;
+}
+.rowfour .product .productBody .selection .willShow {
+    padding-bottom: .5rem;
 }
 .rowfour .product .productBody .selection .willShow .rowItem{
     display: flex;
@@ -949,4 +996,165 @@ footer .social a:hover{
     color: white;
     font-size: .7rem;
     border-radius: 5px;
+}
+.dark-mode {
+    background-color: #242939;
+    color: white;
+}
+.dark-mode {
+    background-color: #242939;
+    color: white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidenav .row div{
+    text-align: center;
+    margin: .5rem auto;
+    font-size: 1.25rem;
+}
+.sidenav .row {
+    margin-top: 1.5rem;
+}
+.sidenav .h4{
+    color: #777;
+    position: absolute;
+    top: 31px;
+    left: 19px;
+    font-size: 1.1rem;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    padding: 0 8px;
+    top: 25px;
+    right: 25px;
+    text-decoration: none;
+    font-size: 24px;
+    border-radius:7px ;
+    width: 28px;
+    height: 35px;
+    display: block;
+    background-color: #f7f8fa;
+}
+.sidenav .closebtn:hover {
+    color: white;
+    background-color: #5d78ff;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.sidenav .sideitem{
+    padding: 2rem;
+    background-color: #f7f8fa;
+    color: #5d78ff;
+    border-radius: 15px;
+}
+.sidenav .sideitem:hover{
+    background-color: #5d78ff;
+    color: white;
+}
+
+.addRecord{
+    position: fixed;
+    display: none;
+    height: 100vh;
+    background-color: rgba(247, 248, 250, 0.6);
+    z-index: 88;
+    width: 100%;
+    overflow: hidden;
+}
+.addRecord .recordInfo {
+    background-color: white;
+    width: 50%;
+    margin: 8rem auto 0;
+    padding: 2rem 0;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 5px 5px 10px #999999;
+}
+
+.addRecord .recordItem {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.addRecord .recordItem .icon{
+    margin-left: 1rem;
+    color: #5d78ff;
+    margin-right: .35rem;
+}
+.addRecord .recordItem select{
+    width: 11rem;
+}
+.addRecord .recordItem h4{
+    font-size: 1.3rem;
+}
+.addRecord .recordItem input{
+    margin-top: .5rem;
+    border: 0;
+    background: none;
+    border-bottom: 1px solid #5d78ff;
+}
+.addRecord .recordItem input:focus{
+    outline: none;
+}
+.addRecord .button button {
+    border: 1px solid #5d78ff;
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 9px 21px;
+    border-radius: 5px;
+    background-color: #5d78ff;
+    color: white;
+    margin-right: 0.5rem;
+}
+.myChart {
+    margin: 0.7rem auto 0;
+    padding: 0 1.7rem 2rem;
+    /*  display: block;
+      height: 408px;
+      width: 750px;*/
+}
+.chartType{
+    margin-top: 1rem;
+}
+.chartType .typeOne {
+    display: inline-block;
+    width: 15px;
+    height: 5px;
+    background-color: #5d78ff;
+    border-radius: 9px;
+    margin-left: 1rem;
+}
+.chartType .typeTwo {
+    display: inline-block;
+    width: 15px;
+    height: 5px;
+    background-color: rgba(240, 243, 255, 1);
+    border-radius: 9px;
+    margin-left: 1rem;
+}
+.chartType span{
+    font-size: .75rem;
+    margin-left: .5rem;
+}
+.cent{
+    position: absolute;
+    bottom: 30%;
+    font-size: 1.4rem;
+    color: #74788d;
+    z-index: 1;
 }

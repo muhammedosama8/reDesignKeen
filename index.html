@@ -7,27 +7,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/cd-top-button.css">
+    <link rel="stylesheet" href="css/sweetalert2.css">
     <link rel="stylesheet" href="css/style.css" />
+
+
 </head>
-<body class="index">
+<body class="index" >
 
 <div class="home">
     <div class="row">
-        <div class="kaside">
+        <div class="kaside kasideWidth" id="kaside">
             <div class="main">
                 <div class="header">
                     <div class="logo">
                         <img src="img/logo.png" class="logo1" alt="logo" />
                     </div>
-                    <div class="button">
-                        <button>
-                            <i class="fas fa-align-right"></i>
+                    <div class="button"  >
+                        <button id="slide">
+                             <i class="fas fa-align-right"></i>
                         </button>
                     </div>
                 </div>
@@ -177,7 +181,7 @@
                 </div>
             </div>
         </div>
-        <div class="kbody">
+        <div class="kbody kbodyWidth" id="kbody">
             <div class="navbar">
                 <nav>
                     <div class="leftNav">
@@ -253,9 +257,32 @@
                                 </div>
                             </div>
                             <div class="ring">
-                                <i class="icon fas fa-bell"></i>
-                                <div class="ringDiv hide">
-                                    <i class="icon fas fa-bell"></i>
+                                <i class="icon fas fa-bell" onclick="openNav()"></i>
+                                <div id="mySidenav" class="sidenav">
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                    <h4 class="h4">Quick Actions</h4>
+                                    <div class="row">
+                                        <div class="col-lg-10 px-1">
+                                            <div class="sideitem">
+                                                <p>order</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 px-1">
+                                            <div class="sideitem">
+                                                <p>upload</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 px-1">
+                                            <div class="sideitem">
+                                                <p>product</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 px-1">
+                                            <div class="sideitem">
+                                                <p>customer</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="cogs">
@@ -295,13 +322,13 @@
                         </a>
                         <a href="#" class="dash calendar">
                             <span class="first">today:</span>
-                            <span class="second">apr 13</span>
+                            <span class="second" id="date">apr 13</span>
                             <i class="icon fas fa-calendar-alt"></i>
                         </a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 px-2 py-2">
                         <div class="one">
                             <div class="cardHeader">
                                 <div class="cardH4">
@@ -347,8 +374,7 @@
                             </div>
                             <div class="cardBody">
                                 <div class="number left">
-                                    <h3 style="left: 18px">$65M</h3>
-                                    <img src="img/bg.png" alt="bg">
+                                    <h3>$65</h3>
                                 </div>
                                 <div class="prog right">
                                     <div class="back">
@@ -380,7 +406,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 px-2 py-2">
                         <div class="one">
                             <div class="cardHeader">
                                 <div class="cardH4">
@@ -421,25 +447,16 @@
                             <div class="cardBody">
                                 <div class="number left">
                                     <h3>95M</h3>
-                                    <img src="img/bg.png" alt="bg">
                                 </div>
                                 <div class="course right">
-                                    <div class="courseName">
-                                        <ul>
-                                            <li>HTML</li>
-                                            <li>CSS</li>
-                                            <li>bootstrap</li>
-                                            <li>java script</li>
-                                        </ul>
-                                    </div>
-                                    <!--<div class="courseProgress">
-                                        <div>37%</div>
-                                    </div>-->
+                                    <canvas id="chart"></canvas>
+                                    <div class="cent">37%</div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 px-2 py-2">
                         <div class="one">
                             <div class="cardHeader">
                                 <div class="cardH4">
@@ -486,7 +503,6 @@
                             <div class="cardBody">
                                 <div class="number left">
                                     <h3>17M</h3>
-                                    <img src="img/bg.png" alt="bg">
                                 </div>
                                 <div class="prog right">
                                     <div class="back">
@@ -518,7 +534,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 rowTwo">
+                    <div class="col-lg-4 px-2 py-2 rowTwo">
                         <div class="carouselDiv">
                             <h4>ANNOUNCEMENTS</h4>
                             <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -577,7 +593,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 rowTwo">
+                    <div class="col-lg-4 px-2 py-2 rowTwo">
                         <div class="carouselDiv second">
                             <h4>PROJECTS</h4>
                             <div id="carouselExampleInterval1" class="carousel slide" data-ride="carousel">
@@ -645,7 +661,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 rowTwo">
+                    <div class="col-lg-4 px-2 py-2 rowTwo">
                         <div class="carouselDiv third">
                             <h4>TODAY'S SCHEDULE</h4>
                             <div id="carouselExampleInterval2" class="carousel slide" data-ride="carousel">
@@ -695,23 +711,23 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleInterval2" role="button" data-slide="prev">
-                                        <i class="fas fa-angle-left carousel-control-prev-icon" aria-hidden="true"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleInterval2" role="button" data-slide="next">
-                                        <i class="fas fa-angle-right carousel-control-next-icon" aria-hidden="true"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
                                 </div>
+                                <a class="carousel-control-prev" href="#carouselExampleInterval2" role="button" data-slide="prev">
+                                    <i class="fas fa-angle-left carousel-control-prev-icon" aria-hidden="true"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleInterval2" role="button" data-slide="next">
+                                    <i class="fas fa-angle-right carousel-control-next-icon" aria-hidden="true"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 rowThree">
+                    <div class="col-lg-4 px-2 py-2 rowThree">
                         <div class="upload">
                             <div class="uploadHead border-bottom">
                                 <h4 class="h4">Latest Uploads</h4>
-                                <button>all files</button>
+                                <button onclick="showSweetAlert('No More','There No more file here','question')">all files</button>
                             </div>
                             <div class="uploadBody">
                                 <div class="upload_items">
@@ -898,7 +914,6 @@
                                     </div>  <!-- uploadItem -->
                                 </div>  <!-- upload_items -->
                                 <div class="clouds">
-                                    <img src="img/clouds.png" alt="cloud">
                                     <div class="cloudsUpload">
                                         <i class="upicon fas fa-cloud-upload-alt"></i>
                                         <span>Drag files here</span>
@@ -907,7 +922,7 @@
                             </div>  <!-- uploadBody -->
                         </div>  <!-- upload -->
                     </div>
-                    <div class="col-lg-8 rowThree">
+                    <div class="col-lg-8 px-2 py-2 rowThree">
                         <div class="recent">
                             <div class="recentHead ">
                                 <div>
@@ -917,20 +932,21 @@
                                 <div>
                                     <span>sort by :</span>
                                     <label>
-                                        <select>
-                                            <option>pending</option>
-                                            <option>info</option>
-                                            <option>canceled</option>
-                                            <option>success</option>
-                                            <option>danger</option>
+                                        <select id='select' onchange='myFunction()'>
+                                            <option value="all">All</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="processing">Processing</option>
+                                            <option value="canceled">Canceled</option>
+                                            <option value="success">Success</option>
+                                            <option value="danger">Danger</option>
                                         </select>
                                     </label>
-                                    <button class="newRecord">new record</button>
+                                    <button class="newRecord" onclick="openRecord()">new record</button>
                                 </div>
                             </div>
 
-                            <div class="recentTable" style="height: 20rem">
-                                <table>
+                            <div class="recentTable">
+                                <table id="myTable">
                                     <thead class="thead">
                                     <tr>
                                         <td class="coulmn1">action</td>
@@ -946,8 +962,8 @@
                                     </tr>
                                     </thead>
 
-                                    <tbody class="tbody js-pscroll">
-                                    <tr class="border-top">
+                                    <tbody class="tbody">
+                                    <tr class="border-top" data-col="success">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -988,7 +1004,7 @@
                                             </div>
                                         </td>
                                         <td class="coulmn2">
-                                            <span class="pending">pending</span>
+                                            <span class="pending">success</span>
                                         </td>
                                         <td class="coulmn3">
                                             <span>30/5/2018</span>
@@ -1009,7 +1025,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="danger">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1050,7 +1066,7 @@
                                             </div>
                                         </td>
                                         <td class="coulmn2">
-                                            <span class="pending">pending</span>
+                                            <span class="processing">danger</span>
                                         </td>
                                         <td class="coulmn3">
                                             <span>10/3/2018</span>
@@ -1071,7 +1087,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="processing">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1133,7 +1149,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="canceled">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1195,7 +1211,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="pending">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1257,7 +1273,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="pending">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1319,7 +1335,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="processing">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1381,7 +1397,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="canceled">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1443,7 +1459,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="pending">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1505,7 +1521,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="pending">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1567,7 +1583,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="processing">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1629,7 +1645,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="canceled">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1691,7 +1707,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="pending">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1753,7 +1769,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top"  data-col="canceled">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1794,7 +1810,7 @@
                                             </div>
                                         </td>
                                         <td class="coulmn2">
-                                            <span class="pending">pending</span>
+                                            <span class="canceled">canceled</span>
                                         </td>
                                         <td class="coulmn3">
                                             <span>10/3/2018</span>
@@ -1815,7 +1831,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top" data-col="processing">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1877,7 +1893,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-top">
+                                    <tr class="border-top"  data-col="canceled">
                                         <td class="coulmn1">
                                             <div class="toolbar">
                                                 <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
@@ -1942,9 +1958,25 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="recentfooter">
+                                <div class="pagination">
+                                    <a href="#">&laquo;</a>
+                                    <a class="active" href="#">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <a href="#">7</a>
+                                    <a href="#">8</a>
+                                    <a href="#">&raquo;</a>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
-                    <div class="col-lg-4 rowfour">
+                    <div class="col-lg-4 px-2 py-2 rowfour">
                         <div class="product">
                             <div class="productHeader border-bottom">
                                 <h4 class="h4">top product</h4>
@@ -2200,7 +2232,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 rowfour">
+                    <div class="col-lg-8 px-2 py-2 rowfour">
                         <div class="product">
                             <div class="productHeader border-bottom">
                                 <h4 class="h4">top product</h4>
@@ -2243,475 +2275,17 @@
                                 </div>
                             </div>
                             <div class="productBody">
-                                <div class="selection">
-                                    <ul class="nav nav-tabs selectionUl">
-                                        <li class="nav-item selectionLi">
-                                            <a href="#setting2" class="nav-link " data-toggle="tab">
-                                                <i class="icon fas fa-chart-line"></i>
-                                                setting
-                                            </a>
-                                        </li>
-                                        <li class="nav-item selectionLi">
-                                            <a href="#code2" class="nav-link active" data-toggle="tab">
-                                                <i class="icon fas fa-map-marked-alt"></i>
-                                                code
-                                            </a>
-                                        </li>
-                                        <li class="nav-item selectionLi">
-                                            <a href="#design2" class="nav-link " data-toggle="tab">
-                                                <i class="icon fab fa-asymmetrik"></i>
-                                                design
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content willShow">
-                                        <div id="setting2" class="container tab-pane  setting">
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>HTML 5 Templates</p>
-                                                    <span>Font-end,Admin & Email</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+79%</span>
-                                                    <div class="progress">
-                                                        <span style="width: 50%;background-color: blue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Wordpress Themes</p>
-                                                    <span>eCommerce Website, Plugin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+21%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 70%;background-color: #721c24"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>eCommerce Websites</p>
-                                                    <span>Shops, Fasion wep sites & atc</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>-12%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 20%;background-color: #ba8b00"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>UI/UX Design</p>
-                                                    <span>Evrything you ever imagine</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+4%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: darkblue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Freebie Themes</p>
-                                                    <span>Font-end & Admin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+34%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: greenyellow"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="code2" class="container tab-pane setting active">
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>eCommerce Websites</p>
-                                                    <span>Shops, Fasion wep sites & atc</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>-12%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 20%;background-color: #ba8b00"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>HTML 5 Templates</p>
-                                                    <span>Font-end,Admin & Email</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+79%</span>
-                                                    <div class="progress">
-                                                        <span style="width: 50%;background-color: blue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Freebie Themes</p>
-                                                    <span>Font-end & Admin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+34%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: greenyellow"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Wordpress Themes</p>
-                                                    <span>eCommerce Website, Plugin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+21%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 70%;background-color: #721c24"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>UI/UX Design</p>
-                                                    <span>Evrything you ever imagine</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+4%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: darkblue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="design2" class="container tab-pane setting">
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>UI/UX Design</p>
-                                                    <span>Evrything you ever imagine</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+4%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: darkblue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Wordpress Themes</p>
-                                                    <span>eCommerce Website, Plugin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+21%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 70%;background-color: #721c24"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>eCommerce Websites</p>
-                                                    <span>Shops, Fasion wep sites & atc</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>-12%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 20%;background-color: #ba8b00"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Freebie Themes</p>
-                                                    <span>Font-end & Admin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+34%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: greenyellow"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>HTML 5 Templates</p>
-                                                    <span>Font-end,Admin & Email</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+79%</span>
-                                                    <div class="progress">
-                                                        <span style="width: 50%;background-color: blue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="chartType">
+                                    <div class="typeOne"></div>
+                                    <span>Author</span>
+                                    <div class="typeTwo"></div>
+                                    <span>Customer</span>
                                 </div>
+                                <canvas id="myChart" class="myChart"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 rowfour">
-                        <div class="product">
-                            <div class="productHeader border-bottom">
-                                <h4 class="h4">top product</h4>
-                                <div class="toolbar">
-                                    <i class="fas fa-ellipsis-h" data-toggle="dropdown"></i>
-                                    <div class="fath dropdown-menu fadeIn animated">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="i fas fa-print"></i>
-                                                    print
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="i fas fa-file"></i>
-                                                    copy
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="i fas fa-file-excel"></i>
-                                                    excl
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="i fas fa-file-csv"></i>
-                                                    csv
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="i     fas fa-file-pdf"></i>
-                                                    pdf
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="productBody">
-                                <div class="selection">
-                                    <ul class="nav nav-tabs selectionUl">
-                                        <li class="nav-item selectionLi">
-                                            <a href="#setting3" class="nav-link " data-toggle="tab">
-                                                <i class="icon fas fa-chart-line"></i>
-                                                setting
-                                            </a>
-                                        </li>
-                                        <li class="nav-item selectionLi">
-                                            <a href="#code3" class="nav-link " data-toggle="tab">
-                                                <i class="icon fas fa-map-marked-alt"></i>
-                                                code
-                                            </a>
-                                        </li>
-                                        <li class="nav-item selectionLi">
-                                            <a href="#design3" class="nav-link active" data-toggle="tab">
-                                                <i class="icon fab fa-asymmetrik"></i>
-                                                design
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content willShow">
-                                        <div id="setting3" class="container tab-pane  setting">
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>HTML 5 Templates</p>
-                                                    <span>Font-end,Admin & Email</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+79%</span>
-                                                    <div class="progress">
-                                                        <span style="width: 50%;background-color: blue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Wordpress Themes</p>
-                                                    <span>eCommerce Website, Plugin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+21%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 70%;background-color: #721c24"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>eCommerce Websites</p>
-                                                    <span>Shops, Fasion wep sites & atc</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>-12%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 20%;background-color: #ba8b00"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>UI/UX Design</p>
-                                                    <span>Evrything you ever imagine</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+4%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: darkblue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Freebie Themes</p>
-                                                    <span>Font-end & Admin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+34%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: greenyellow"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="code3" class="container tab-pane setting ">
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>eCommerce Websites</p>
-                                                    <span>Shops, Fasion wep sites & atc</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>-12%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 20%;background-color: #ba8b00"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>HTML 5 Templates</p>
-                                                    <span>Font-end,Admin & Email</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+79%</span>
-                                                    <div class="progress">
-                                                        <span style="width: 50%;background-color: blue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Freebie Themes</p>
-                                                    <span>Font-end & Admin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+34%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: greenyellow"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Wordpress Themes</p>
-                                                    <span>eCommerce Website, Plugin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+21%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 70%;background-color: #721c24"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>UI/UX Design</p>
-                                                    <span>Evrything you ever imagine</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+4%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: darkblue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="design3" class="container tab-pane setting active">
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>UI/UX Design</p>
-                                                    <span>Evrything you ever imagine</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+4%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: darkblue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Wordpress Themes</p>
-                                                    <span>eCommerce Website, Plugin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+21%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 70%;background-color: #721c24"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>eCommerce Websites</p>
-                                                    <span>Shops, Fasion wep sites & atc</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>-12%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 20%;background-color: #ba8b00"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>Freebie Themes</p>
-                                                    <span>Font-end & Admin</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+34%</span>
-                                                    <div class="progress" >
-                                                        <span style="width: 80%;background-color: greenyellow"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rowItem">
-                                                <div class="left">
-                                                    <p>HTML 5 Templates</p>
-                                                    <span>Font-end,Admin & Email</span>
-                                                </div>
-                                                <div class="right">
-                                                    <span>+79%</span>
-                                                    <div class="progress">
-                                                        <span style="width: 50%;background-color: blue"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div><!-- contain -->
 
@@ -2731,18 +2305,60 @@
             </footer>
         </div><!-- kbody -->
     </div> <!-- row -->
+    <div class="addRecord">
+        <div class="recordInfo">
+
+                <div class="recordItem">
+                    <h4>status :</h4>
+                    <i class="icon fas fa-user"></i>
+                    <select id="status" name="status">
+                        <option value="no">--</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="canceled">Canceled</option>
+                        <option value="success">Success</option>
+                        <option value="danger">Danger</option>
+                    </select>
+                </div>
+
+                <div class="recordItem">
+                    <h4>Date :</h4>
+                    <i class="icon far fa-calendar-plus"></i>
+                    <input type="date" name="date" id="addDate" required="required">
+                </div>
+
+                <div class="recordItem">
+                    <h4>Company :</h4>
+                    <i class="icon far fa-keyboard"></i>
+                    <input type="text" name="company" id="company" placeholder="Company Name">
+                    <i class="icon far fa-keyboard"></i>
+                    <input type="text" name="title" id="title" placeholder="Company Title">
+                </div>
+
+                <div class="recordItem button">
+                    <button id="save" type="submit">save</button>
+                    <button id="close">close</button>
+                </div>
+        </div>
+    </div>
+
 </div> <!-- home -->
 
 <a href="#" class="cd-top js-cd-top"><i class="fas fa-arrow-up"></i></a>
-<script rel="script" src="js/all.min.js"></script>
+<script rel="script" src="js/all.min.js"></script> <!-- for Icons -->
 <script rel="script" src="js/js.js"></script>
+<script rel="script" src="js/jq.js"></script>
+<script rel="script" src="js/util.js"></script>
+<script rel="script" src="js/charts.js"></script>
 <script src="js/cd-top-button.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
 <script>
-    function toggle(source) {
-        var checkboxes = document.getElementsByName('box');
-        for(var i=0, n=checkboxes.length;i<n;i++) {
-            checkboxes[i].checked = source.checked;
-        }
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
     }
 </script>
 </body>
