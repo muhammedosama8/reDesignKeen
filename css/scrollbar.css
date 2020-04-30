@@ -16,7 +16,8 @@
 }
 /* *********************** */
 .body::-webkit-scrollbar {
-    width: 7px;
+    width: 6px;
+    background-color: #242939;
 }
 /* Track */
 .body::-webkit-scrollbar-track {

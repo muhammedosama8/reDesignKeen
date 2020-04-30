@@ -1,5 +1,4 @@
 let myChart = document.getElementById('myChart').getContext('2d');
-
 let massPopChart = new Chart(myChart,{
     type:'bar',
     data:{
@@ -32,22 +31,23 @@ let massPopChart = new Chart(myChart,{
                 ticks: {
                     beginAtZero: true
                 },
-                barPercentage: 0.4
+                barPercentage: 0.
+                
             }]
         },
         legend:{
-            display:false
+            display:false,
+            barWidth: .1
         },
-        series: {
-            0: { lineWidth: 0 },
-            1: { lineWidth: 0 },
-            2: { lineWidth: 0 }
+        bars: {
+            barWidth : .1,
+            lineWidth : 1
         }
     }
 });
 
-let chart = document.getElementById('chart').getContext('2d');
 
+let chart = document.getElementById('chart').getContext('2d');
 let massChart = new Chart(chart,{
     type:'doughnut',
     data:{

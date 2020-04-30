@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="246003f7-9c42-48d4-b4a2-7e918bcc5838" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Keen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Keen.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/scrollbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/scrollbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/charts.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/charts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jq.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jq.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,9 @@
       <workItem from="1587599541179" duration="6688000" />
       <workItem from="1588024666444" duration="22417000" />
       <workItem from="1588072286305" duration="272000" />
-      <workItem from="1588094954403" duration="36722000" />
+      <workItem from="1588094954403" duration="37892000" />
+      <workItem from="1588175767662" duration="25577000" />
+      <workItem from="1588254431632" duration="21594000" />
     </task>
     <servers />
   </component>
@@ -101,6 +99,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588132059190" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1588200958477">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1588200958477" />
     <state x="93" y="119" width="1350" height="633" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586980744397">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
