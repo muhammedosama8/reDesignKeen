@@ -1196,7 +1196,7 @@ footer .social a:hover{
         font-size: 2rem;
     }
 }
-@media (min-width:768px ) and (max-width:991px ){
+@media (min-width:767px ) and (max-width:991px ){
 
     .home .kaside {
         padding-left: .7rem;
@@ -1283,7 +1283,7 @@ footer .social a:hover{
 
 }
 
-@media (max-width:767px ){
+@media  (max-width:767px ){
     .contain .rowThree .upload .uploadBody .uploadItem img {
         width: 7%;
     }
@@ -1332,7 +1332,7 @@ footer .social a:hover{
          top: 70px;
          z-index: 100;
      }
-    .kasideWidth {
+    .kaside {
         width: 30%;
     }
     .home .kaside .header {
@@ -1397,14 +1397,123 @@ footer .social a:hover{
     .kbody .navbar nav .leftNav .reports .navDrop_Ul ul {
         border: none;
     }
-
-
-
-
 }
-/*
-<i class="fa fa-bars"></i>
-*/
+@media (max-width:588px ){
+    .kbody .contain .dashboard {
+        height: 100%;
+    }
+    .kbody .contain .dashboard .dashboardLeft{
+        margin: .5rem auto;
+    }
+    .kbody .contain .dashboard .dashboardRight{
+        margin:auto;
+    }
+    .kbody .contain .dashboard {
+        display: flex;
+        flex-direction: column;
+    }
+    .home .kaside .footer .footer_nav .icons {
+        padding: 4px;
+    }
+    .kasideWidth {
+        width: 35%;
+    }
+    .leftNavUl {
+        width: 35%;
+    }
+    .coulmn2 {
+        display: none;
+    }
+    .coulmn4 {
+        width: 75%;
+    }
+    .rowThree .recent .recentHead div span {
+        display: none;
+    }
+    .rowThree .recent .recentHead select {
+        display: none;
+    }
+
+    .rowThree .recent .recentHead,
+    .rowThree .recent .recentfooter {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        position: initial;
+        width: 100%;
+    }
+    .rowThree .recent {
+        height: 100%;
+    }
+    .rowThree .recent .recentTable {
+             overflow-y: auto;
+    }
+    .recentfooter .pagination a {
+        padding: 5px 10px;
+    }
+    .rowfour .product .productBody .selection .willShow .rowItem .right .progress {
+            width: 50px;
+    }
+    footer {
+        padding: 1rem 1.8rem 6px;
+    }
+    footer p {
+        font-size: .8rem;
+    }
+    footer .social a {
+        margin-left: .3rem;
+    }
+    .leftNav .bar {
+        font-size: 1.4rem;
+    }
+    .home .kaside{
+        padding-left: 0;
+    }
+    .home .kaside .dropMenu a {
+        padding: 7px 10px;
+        font-size: .8rem;
+    }
+    .kasideWidth {
+        width: 40%;
+    }
+    .addRecord .recordInfo {
+        width: 95%;
+    }
+    .rowThree .recent .recentTable {
+        margin-top: 0
+    }
+    .contain .rowTwo .carouselDiv h4 {
+        font-size: 1rem;
+    }
+    .product .productBody .selection .willShow .rowItem .left p {
+        font-size: .9rem;
+    }
+    .product .productBody .selection .willShow .rowItem .left span {
+        font-size: .8rem;
+    }
+    .product .productBody .selection .willShow .rowItem .right span {
+        font-size: .8rem;
+        margin-right: .8rem;
+    }
+    .home .kaside .body .liH4 {
+        margin: 1.5rem 0 1rem 0.3rem;
+    }
+}
+@media (max-width: 320px) {
+    .kbody .navbar nav .rightNav {
+        padding-right: 0;
+    }
+    .kbody .navbar nav .rightNav .rightNavUl>div {
+        padding: 5px
+    }
+    .recentfooter .pagination a {
+        padding: 4px 8px;
+    }
+    .coulmn4 div img {
+        margin: auto 0;
+    }
+}
+
 
 
 

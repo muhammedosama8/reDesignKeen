@@ -21,6 +21,23 @@ $(document).ready(function () {
 
 
 
+
+});
+$(window).resize(function() {
+
+    if ($(window).width()< 767) {
+        $('#kaside').attr("style", "display:none");
+        if ($( '#kaside' ).hasClass( "add1" )){
+            $('#kaside').removeClass('add1');
+            $('#kbody').removeClass('add2');
+        }
+    } else {
+        $('#kaside').addClass('kasideWidth');
+        $('#kbody').addClass('kbodyWidth');
+        $('.leftNav').css("display","block");
+
+    }
+
 });
 
 $('#apps').click(function (evt) {
