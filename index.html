@@ -38,12 +38,12 @@
                 <div class="body js-pscroll">
                     <ul>
                         <li>
-                            <a href="#" class="btn btn-secondary " id="apps">
+                            <a href="#" class="btn btn-secondary accordion">
                                 <i class="leftIcon fab fa-telegram-plane"></i>
                                 apps
                                 <i class="rightIcon fas fa-angle-right"></i>
                             </a>
-                            <div class="dropMenu apps" id="appsDropdown">
+                            <div class="dropMenu apps">
                                 <div class="dropMenuLink">
                                     <a  href="#">&bullet;&nbsp; user</a>
                                     <a  href="#">&bullet;&nbsp; profile</a>
@@ -52,12 +52,12 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-secondary" id="pages">
+                            <a href="#" class="btn btn-secondary accordion" >
                                 <i class="leftIcon far fa-file-alt"></i>
                                 pages
                                 <i class="rightIcon fas fa-angle-right"></i>
                             </a>
-                            <div class="dropMenu pages" id="pagesDropdown">
+                            <div class="dropMenu pages" >
                                 <div class="dropMenuLink">
                                     <a href="#">&bullet;&nbsp; Wizard</a>
                                     <a href="#">&bullet;&nbsp; blog</a>
@@ -73,7 +73,7 @@
                         </li>
 
                         <li>
-                            <a href="#" class="btn btn-secondary" id="features">
+                            <a href="#" class="btn btn-secondary accordion" id="features">
                                 <i class="leftIcon fas fa-box-open"></i>
                                 Features
                                 <i class="rightIcon fas fa-angle-right"></i>
@@ -98,7 +98,7 @@
                         </li>
 
                         <li>
-                            <a href="#" class="btn btn-secondary" id="base">
+                            <a href="#" class="btn btn-secondary accordion" id="base">
                                 <i class="leftIcon fas fa-cube"></i>
                                 base
                                 <i class="rightIcon fas fa-angle-right"></i>
@@ -113,12 +113,12 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-secondary" id="forms">
+                            <a href="#" class="btn btn-secondary accordion" >
                                 <i class="leftIcon fas fa-ring"></i>
                                 forms
                                 <i class="rightIcon fas fa-angle-right"></i>
                             </a>
-                            <div class="dropMenu forms" id="formsDropdown">
+                            <div class="dropMenu forms">
                                 <div class="dropMenuLink">
                                     <a href="#">&bullet;&nbsp; header</a>
                                     <a href="#">&bullet;&nbsp; subheader</a>
@@ -138,12 +138,12 @@
                         </li>
 
                         <li>
-                            <a href="#" class="btn btn-secondary" id="icons">
+                            <a href="#" class="btn btn-secondary accordion">
                                 <i class="leftIcon fas fa-icons"></i>
                                 icons
                                 <i class="rightIcon fas fa-angle-right"></i>
                             </a>
-                            <div class="dropMenu icons" id="iconsDropdown">
+                            <div class="dropMenu icons">
                                 <div class="dropMenuLink">
                                     <a href="#">&bullet;&nbsp; fontawesome 4</a>
                                     <a href="#">&bullet;&nbsp; subheader</a>
@@ -185,13 +185,13 @@
             <div class="navbar">
                 <nav>
                     <div class="leftNav">
-                        <div class="kasideShow" onclick="showKaside()">
+                        <div class="kasideShow" onclick="showKaside()" id="showKaside">
                             <i class="bar fa fa-bars"></i>
                         </div>
-                        <div class="navShow" onclick="showNav()">
-                            <i class="bar fa fa-bars"></i>
+                        <div class="navShow" onclick="showNav()" id="showNav">
+                            <i class="points fas fa-ellipsis-v"></i>
                         </div>
-                        <div class="leftNavUl">
+                        <div class="leftNavUl" id="leftNavUl">
                             <ul class="leftNav_Ul" id="leftNav_Ul">
                                 <li class="leftNav_li">
                                     <a href="#" data-toggle="dropdown">
@@ -328,7 +328,7 @@
                         </a>
                         <a href="#" class="dash calendar">
                             <span class="first">today:</span>
-                            <span class="second" id="date">apr 13</span>
+                            <span class="second" id="date"></span>
                             <i class="icon fas fa-calendar-alt"></i>
                         </a>
                     </div>
@@ -936,8 +936,11 @@
                                         </div>  <!-- uploadItem -->
                                         <div class="clouds">
                                             <div class="cloudsUpload">
-                                                <i class="upicon fas fa-cloud-upload-alt"></i>
-                                                <span>Drag files here</span>
+                                                <form class="dropzone"
+                                                      id="my-awesome-dropzone">
+                                                    <i class="upicon fas fa-cloud-upload-alt"><input name="file" type="file" multiple /></i>
+                                                    <span>Drag files here</span>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>  <!-- upload_items -->
@@ -2334,39 +2337,41 @@
         </div><!-- kbody -->
     </div> <!-- row -->
     <div class="addRecord">
-        <div class="recordInfo">
+        <div class="calcHeight">
+            <div class="recordInfo">
 
-                <div class="recordItem">
-                    <h4>status :</h4>
-                    <i class="icon fas fa-user"></i>
-                    <select id="status" name="status">
-                        <option value="no">--</option>
-                        <option value="pending">Pending</option>
-                        <option value="processing">Processing</option>
-                        <option value="canceled">Canceled</option>
-                        <option value="success">Success</option>
-                        <option value="danger">Danger</option>
-                    </select>
-                </div>
+                    <div class="recordItem">
+                        <h4>status :</h4>
+                        <i class="icon fas fa-user"></i>
+                        <select id="status" name="status">
+                            <option value="no">--</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="canceled">Canceled</option>
+                            <option value="success">Success</option>
+                            <option value="danger">Danger</option>
+                        </select>
+                    </div>
 
-                <div class="recordItem">
-                    <h4>Date :</h4>
-                    <i class="icon far fa-calendar-plus"></i>
-                    <input type="date" name="date" id="addDate" required="required">
-                </div>
+                    <div class="recordItem">
+                        <h4>Date :</h4>
+                        <i class="icon far fa-calendar-plus"></i>
+                        <input type="date" name="date" id="addDate" required="required">
+                    </div>
 
-                <div class="recordItem">
-                    <h4>Company :</h4>
-                    <i class="icon far fa-keyboard"></i>
-                    <input type="text" name="company" id="company" placeholder="Company Name">
-                    <i class="icon far fa-keyboard"></i>
-                    <input type="text" name="title" id="title" placeholder="Company Title">
-                </div>
+                    <div class="recordItem">
+                        <h4>Company :</h4>
+                        <i class="icon far fa-keyboard"></i>
+                        <input type="text" name="company" id="company" placeholder="Company Name">
+                        <i class="icon far fa-keyboard"></i>
+                        <input type="text" name="title" id="title" placeholder="Company Title">
+                    </div>
 
-                <div class="recordItem button">
-                    <button id="save" type="submit">save</button>
-                    <button id="close">close</button>
-                </div>
+                    <div class="recordItem button">
+                        <button id="save" type="submit">save</button>
+                        <button id="close">close</button>
+                    </div>
+            </div>
         </div>
     </div>
 
@@ -2380,38 +2385,20 @@
 <script rel="script" src="js/charts.js"></script>
 <script src="js/cd-top-button.js"></script>
 <script src="js/sweetalert2.all.min.js"></script>
+<script src="js/dropzone.js" rel="script"></script>
 <script>
-
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            var list = this.nextElementSibling;
+            if (list.style.display === "block") {
+                list.style.display = "none";
+            } else {
+                list.style.display = "block";
+            }
+        });
     }
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-
-    function showKaside() {
-        var x = document.querySelector('.kaside '),
-            y = document.querySelector('.leftNavUl ');
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            y.style.display = "none";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-    function showNav() {
-        var x = document.querySelector('.kaside '),
-            y = document.querySelector('.leftNavUl ');
-        if (y.style.display === "none") {
-            y.style.display = "block";
-            x.style.display = "none";
-        } else {
-            y.style.display = "none";
-        }
-    }
-
-
 
 </script>
 </body>

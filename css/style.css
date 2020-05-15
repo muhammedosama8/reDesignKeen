@@ -7,8 +7,7 @@ body{
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
-
-label{
+label,ul{
     margin-bottom: 0;
 }
 .index{
@@ -16,9 +15,6 @@ label{
 }
 .show{
     display: block;
-}
-ul{
-    margin-bottom: 0;
 }
 .home .kaside{
     background-color: #242939;
@@ -152,9 +148,7 @@ button:focus{
 .dropMenu a{
     padding: 7px 28px;
 }
-
 /* ******************** */
-
 .home .kbody{
     position: absolute;
     right: 0;
@@ -257,7 +251,6 @@ button:focus{
 .kbody .navbar nav .rightNav{
     padding-right: 1rem;
     margin-top: -5px;
-
 }
 .kbody .navbar nav .rightNav .rightNavUl {
     display: flex;
@@ -304,8 +297,6 @@ button:focus{
 .kbody .navbar nav .rightNav .rightNavUl .user img{
     margin-right: 5px;
 }
-
-
 .kbody .contain{
     width: 95%;
     margin: 5rem auto .5rem;
@@ -389,7 +380,6 @@ button:focus{
     font-size: .8rem;
     margin-left: 4px;
 }
-
 .one{
     background-color: white;
     padding: 1rem 1.5rem;
@@ -421,12 +411,10 @@ button:focus{
 .one .cardBody .number{
     position: relative;
 }
-
 .one .cardBody .number img{
     opacity: 0.1;
     width: 95px;
 }
-
 .one .cardBody .number h3{
     display: inline;
     text-align: center;
@@ -571,7 +559,6 @@ button:focus{
     margin: auto 0;
     color: #74788d;
 }
-
 .contain .rowThree .upload{
     background-color: white;
 }
@@ -622,7 +609,6 @@ button:focus{
     font-size: .85rem;
     margin: 0;
 }
-
 .contain .rowThree .upload .uploadBody .uploadItem .icon{
     position: absolute;
     right: 4%;
@@ -637,7 +623,6 @@ button:focus{
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 .contain .rowThree .upload .clouds .cloudsUpload{
     display: flex;
     flex-direction: column;
@@ -654,6 +639,7 @@ button:focus{
 .contain .rowThree .upload .clouds .cloudsUpload span{
     color: white;
     font-size: .9rem;
+    display: block;
 }
 .rowThree .recent{
     background-color: white;
@@ -724,7 +710,6 @@ button:focus{
     background:none;
     color: #5d78ff;
 }
-
 .rowThree .recent .recentTable{
     margin-top: 4rem;
     height: 80%;
@@ -808,21 +793,17 @@ button:focus{
 .tbody tr{
     height: 50px;
 }
-
 .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #5d78ff!important;
 }
-
 .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: 0 0 0 .5px #5d78ff
 }
-
 .custom-control-label::before,
 .custom-control-label::after{
     margin-top: -13px;
     margin-left: 3px;
 }
-
 .rowfour .product{
     background-color: white;
     margin-top: 1rem;
@@ -914,9 +895,6 @@ button:focus{
     position: absolute;
     left: 0;
 }
-
-
-
 footer{
     display: flex;
     justify-content: space-between;
@@ -938,31 +916,26 @@ footer .social a:hover{
     text-decoration: none;
 }
 /* ***************/
-.hide{
-    display: none;
-}
-.show{
-    display: block;
-}
- .fath{
+
+.fath{
     width: 11.5rem;
 }
- .fath ul{
+.fath ul{
     list-style: none;
 }
- .fath ul li{
+.fath ul li{
     display: block;
     margin-top: .3rem;
     padding: 7px 0;
 }
- .fath ul li:hover{
+.fath ul li:hover{
     background-color: #f0f3ff;
 }
- .fath ul li:hover a{
+.fath ul li:hover a{
     color: #5d78ff;
     text-decoration: none;
 }
- .fath ul li a{
+.fath ul li a{
     font-size: .8rem;
     margin-left: 1rem;
     color: #74788d;
@@ -1002,15 +975,6 @@ footer .social a:hover{
     font-size: .7rem;
     border-radius: 5px;
 }
-.dark-mode {
-    background-color: #242939;
-    color: white;
-}
-.dark-mode {
-    background-color: #242939;
-    color: white;
-}
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -1022,6 +986,9 @@ footer .social a:hover{
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+}
+.navShow{
+    display: none;
 }
 .sidenav .row div{
     text-align: center;
@@ -1038,8 +1005,6 @@ footer .social a:hover{
     left: 19px;
     font-size: 1.1rem;
 }
-
-
 .sidenav .closebtn {
     position: absolute;
     padding: 0 8px;
@@ -1057,7 +1022,6 @@ footer .social a:hover{
     color: white;
     background-color: #5d78ff;
 }
-
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
@@ -1072,7 +1036,6 @@ footer .social a:hover{
     background-color: #5d78ff;
     color: white;
 }
-
 .addRecord{
     position: fixed;
     display: none;
@@ -1091,7 +1054,6 @@ footer .social a:hover{
     text-align: center;
     box-shadow: 5px 5px 10px #999999;
 }
-
 .addRecord .recordItem {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -1129,9 +1091,6 @@ footer .social a:hover{
 .myChart {
     margin: 0.7rem auto 0;
     padding: 0 1.7rem 2rem;
-    /*  display: block;
-      height: 408px;
-      width: 750px;*/
 }
 #chart{
     width: 205px;
@@ -1171,10 +1130,8 @@ footer .social a:hover{
 .leftNav .bar{
     display: none;
 }
-
 /* ---------------- */
 @media (min-width:992px ){
-
     .rowfour .product .productBody .selection .willShow .rowItem .right .progress{
         width: 40px
     }
@@ -1278,11 +1235,7 @@ footer .social a:hover{
     .rowItem .right .progress {
         width: 180px;
     }
-
-
-
 }
-
 @media  (max-width:767px ){
     .contain .rowThree .upload .uploadBody .uploadItem img {
         width: 7%;
@@ -1292,22 +1245,16 @@ footer .social a:hover{
         margin-top: 0;
         background-position: top;
         background-size: cover;
-        }
-        .contain .rowThree .upload .clouds .cloudsUpload {
+    }
+    .contain .rowThree .upload .clouds .cloudsUpload {
             bottom: 16px;
             left: 42%;
-        }
+    }
     .coulmn3{
         display: none;
     }
     .coulmn4 {
         width: 50%;
-    }
-    .home .kaside{
-        display: none;
-    }
-    .home .leftNavUl{
-        display: none;
     }
     .home .kbody{
         width: 100%;
@@ -1315,12 +1262,17 @@ footer .social a:hover{
     .leftNav{
         display: flex;
     }
-    .leftNav .bar{
+    .leftNav .bar,
+    .points{
         display: block;
         font-size: 1.7rem;
         margin-left: .5rem;
         color: rgba(158, 158, 158, 0.69);
         cursor: pointer;
+    }
+    .points{
+        font-size: 1.3rem;
+        margin: .06rem 0 0 .6rem;
     }
     .sidenav .row {
         margin-top: 3.5rem;
@@ -1474,7 +1426,7 @@ footer .social a:hover{
         font-size: .8rem;
     }
     .kasideWidth {
-        width: 40%;
+        width: 50%;
     }
     .addRecord .recordInfo {
         width: 95%;
@@ -1500,7 +1452,8 @@ footer .social a:hover{
     }
 }
 @media (max-width: 320px) {
-    .kbody .navbar nav .rightNav {
+    .kbody .navbar nav .rightNav,
+    .rightNavUl{
         padding-right: 0;
     }
     .kbody .navbar nav .rightNav .rightNavUl>div {
@@ -1513,19 +1466,29 @@ footer .social a:hover{
         margin: auto 0;
     }
 }
+@media (max-width: 445px) {
+    .leftNavUl {
+        width: 100%;
+        height: auto;
+        display: none;
+    }
+    .kaside{
+        display: none;
+    }
+    .kbody .navbar nav .leftNav_Ul {
+        margin-top: 0;
+    }
+    .kbody .navbar nav .leftNav_Ul .leftNav_li a {
+    padding: 7px 24% 0 10px;
+    }
+    .navShow{
+        display: block;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}

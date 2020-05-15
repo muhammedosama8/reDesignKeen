@@ -7,7 +7,6 @@ function myFunction() {
 
     table = document.getElementById("myTable");
     trs = table.getElementsByTagName("tr");
-    console.log(trs);
     for (const tr of trs) {
         if (filter.toString().toLowerCase() == 'all'){
             tr.style.display = '';

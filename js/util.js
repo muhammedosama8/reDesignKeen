@@ -1,9 +1,17 @@
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+var d = new Date();
+var day = d.getDate();
+document.getElementById('date').innerText = monthNames[d.getMonth()] + ' ' + day
+
 function toggle(source) {
     var checkboxes = document.getElementsByName('box');
     for(var i=0, n=checkboxes.length;i<n;i++) {
         checkboxes[i].checked = source.checked;
     }
 }
+
 document.getElementById('slide').addEventListener('click',function (evt) {
     evt.preventDefault();
     var kaside=document.getElementById('kaside');
@@ -129,5 +137,43 @@ function showSweetAlert(title,text,icon) {
         text: text,
     });
 }
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+/*
+function showKaside() {
+    var x = document.querySelector('.kaside '),
+        y = document.querySelector('.leftNavUl ');
+    if (x.style.display == "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+    }
+}*/
+/*
+function showNav() {
+    var x = document.querySelector('.kaside '),
+        y = document.querySelector('.leftNavUl ');
+    if (y.hasChildNodes()) {
+        y.style.display = "block";
+        x.style.display = "none";
+    } else {
+        y.style.display = "none";
+    }
+}*/
+function showNav() {
+    document.getElementById('leftNavUl').classList.toggle('show');
+    document.getElementById('kaside').classList.remove('show');
+}
+function showKaside() {
+    document.getElementById('kaside').classList.toggle('show');
+    document.getElementById('leftNavUl').classList.remove('show');
+}
+
+let myDropzone = new Dropzone("div#myId", {url: "/file/post"});
 
 
